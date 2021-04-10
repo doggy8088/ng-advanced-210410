@@ -13,7 +13,8 @@
     <!-- Custom Text Color Utilities -->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Custom Text Color Utilities</h6>
+        <h6 class="m-0 font-weight-bold text-primary"
+          (click)="aaa.scrollIntoView()">Custom Text Color Utilities</h6>
       </div>
       <div class="card-body">
         <p class="text-gray-100 p-3 bg-dark m-0">.text-gray-100</p>
@@ -28,7 +29,7 @@
       </div>
     </div>
     <!-- Custom Font Size Utilities -->
-    <div class="card shadow mb-4">
+    <div class="card shadow mb-4" #aaa>
       <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Custom Font Size Utilities</h6>
       </div>
