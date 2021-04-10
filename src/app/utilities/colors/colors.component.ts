@@ -38,7 +38,8 @@ export class ColorsComponent implements OnInit {
   }
 
   plusOne() {
-    this.router.navigate(['/utilities/color/', this.type+1])
+    // this.router.navigate(['/utilities/color/', this.type+1])
+    this.router.navigate(['../', this.type+1], { relativeTo: this.route })
   }
 
 }
