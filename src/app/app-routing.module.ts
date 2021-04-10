@@ -14,8 +14,12 @@ const routes: Routes = [
   {
     path: 'utilities',
     children: [
-      { path: 'color', component: ColorsComponent },
-      { path: 'color/:type', component: ColorsComponent },
+      { path: 'color', component: ColorsComponent, data: { seoTitle: 'N/A' } },
+      { path: 'color/:type', component: ColorsComponent,
+        data: {
+          seo: {title:'Color', desc: ''}
+        }
+      },
     ]
   },
   { path: '**', component: NotFoundComponent },
