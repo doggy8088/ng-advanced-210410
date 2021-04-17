@@ -2,28 +2,44 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, ValidatorFn, Validators } from '@angular/forms';
 import { ValidateTwId } from './ValidateTwId';
 
+export interface Login2Data {
+  email:        string;
+  password:     string;
+  isRememberMe: boolean;
+  extra:        Extra[];
+}
+
+export interface Extra {
+  name: string;
+  tel:  string;
+  twid: string;
+}
+
 @Component({
   templateUrl: './login2.component.html',
   styleUrls: ['./login2.component.css']
 })
 export class Login2Component implements OnInit {
 
-  data: any = {
+  data: Login2Data = {
     "email": "doggy.huang@gmail.com",
     "password": "123789yuiT",
     "isRememberMe": true,
     "extra": [
       {
         "name": "1111",
-        "tel": "1111"
+        "tel": "1111",
+        "twid": ""
       },
       {
         "name": "2222",
-        "tel": "2222"
+        "tel": "2222",
+        "twid": ""
       },
       {
         "name": "3333",
-        "tel": "3333"
+        "tel": "3333",
+        "twid": ""
       }
     ]
   };
