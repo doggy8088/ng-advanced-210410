@@ -8,9 +8,23 @@ import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } fr
 export class Login2Component implements OnInit {
 
   data: any = {
-    email: 'user1@example.com',
-    password: '123defDEF',
-    isRememberMe: false
+    "email": "doggy.huang@gmail.com",
+    "password": "123789yuiT",
+    "isRememberMe": true,
+    "extra": [
+      {
+        "name": "1111",
+        "tel": "1111"
+      },
+      {
+        "name": "2222",
+        "tel": "2222"
+      },
+      {
+        "name": "3333",
+        "tel": "3333"
+      }
+    ]
   };
 
   origClass = '';
@@ -40,11 +54,25 @@ export class Login2Component implements OnInit {
         updateOn: 'change'
       }),
       isRememberMe: true,
-      extra: this.fb.array([
-        this.makeExtra(),
-        this.makeExtra()
-      ])
+      extra: this.fb.array([])
     });
+
+    for (let i = 0; i < this.data.extra.length; i++) {
+        this.getFormArray('extra').push(this.makeExtra());
+    }
+
+    this.form.setValue(this.data);
+
+  }
+
+  resetForm() {
+    this.getFormArray('extra').clear()
+
+    for (let i = 0; i < this.data.extra.length; i++) {
+        this.getFormArray('extra').push(this.makeExtra());
+    }
+
+    this.form.reset(this.data);
   }
 
   makeExtra() {
