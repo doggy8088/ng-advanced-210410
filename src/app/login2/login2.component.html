@@ -50,24 +50,9 @@ errors = {{ form.get('email').errors | json }}
 
                   <section formArrayName="extra">
 
-                    <section formGroupName="0">
+                    <section *ngFor="let g of getFormArray('extra').controls; let i=index" [formGroupName]="i">
                       <div class="form-group">
-                        1
-                      </div>
-                      <div class="form-group">
-                        <input type="text" formControlName="name" class="form-control form-control-user" placeholder="輸入您的姓名">
-                      </div>
-                      <div class="form-group">
-                        <input type="text" formControlName="tel" class="form-control form-control-user" placeholder="輸入您的電話(09xx000000)">
-                      </div>
-                      <div class="form-group">
-                        <button type="button">＋</button>
-                      </div>
-                    </section>
-
-                    <section formGroupName="1">
-                      <div class="form-group">
-                        2
+                        {{ i+1 }}
                       </div>
                       <div class="form-group">
                         <input type="text" formControlName="name" class="form-control form-control-user" placeholder="輸入您的姓名">

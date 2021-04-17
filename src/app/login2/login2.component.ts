@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   templateUrl: './login2.component.html',
@@ -58,6 +58,10 @@ export class Login2Component implements OnInit {
     return this.form.get(name).invalid
       && this.form.get(name).dirty
       && this.form.get(name).errors[validation];
+  }
+
+  getFormArray(name: string) {
+    return this.form.get(name) as FormArray;
   }
 
   onSubmit(form: FormGroup) {
