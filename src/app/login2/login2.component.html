@@ -47,6 +47,18 @@ errors = {{ form.get('email').errors | json }}
                       <label class="custom-control-label" for="customCheck">Remember Me</label>
                     </div>
                   </div>
+
+                  <section formGroupName="extra">
+
+                    <div class="form-group">
+                      <input type="text" formControlName="name" class="form-control form-control-user" placeholder="輸入您的姓名">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" formControlName="tel" class="form-control form-control-user" placeholder="輸入您的電話(09xx000000)">
+                    </div>
+
+                  </section>
+
                   <button type="submit" class="btn btn-primary btn-user btn-block">
                     Login
                   </button>

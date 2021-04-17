@@ -39,7 +39,11 @@ export class Login2Component implements OnInit {
         ],
         updateOn: 'change'
       }),
-      isRememberMe: true
+      isRememberMe: true,
+      extra: this.fb.group({
+        name: this.fb.control(''),
+        tel: this.fb.control('')
+      })
     });
   }
 
