@@ -43,6 +43,12 @@ export class Login2Component implements OnInit {
     });
   }
 
+  showError(name, validation) {
+    return this.form.get(name).invalid
+      && this.form.get(name).dirty
+      && this.form.get(name).errors[validation];
+  }
+
   onSubmit(form: FormGroup) {
     console.log(form);
     if (form.valid) {

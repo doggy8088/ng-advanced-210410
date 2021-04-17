@@ -17,8 +17,8 @@
                 <form class="user" [formGroup]="form" (ngSubmit)="onSubmit(form)" [class.was-validated]="form.touched && form.invalid">
                   <div class="form-group">
                     <input type="email" formControlName="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
-                    <div class="invalid-feedback" *ngIf="form.get('email').invalid && form.get('email').dirty && form.get('email').errors.required">請輸入 Email</div>
-                    <div class="invalid-feedback" *ngIf="form.get('email').invalid && form.get('email').dirty && form.get('email').errors.email">請輸入正確的 Email 格式</div>
+                    <div class="invalid-feedback" *ngIf="showError('email', 'required')">請輸入 Email</div>
+                    <div class="invalid-feedback" *ngIf="showError('email', 'email')">請輸入正確的 Email 格式</div>
 <pre>value = {{ form.get('email').value | json }}
 pristine = {{ form.get('email').pristine | json }}
 dirty = {{ form.get('email').dirty | json }}
