@@ -60,6 +60,11 @@ errors = {{ form.get('email').errors | json }}
                       <div class="form-group">
                         <input type="text" formControlName="tel" class="form-control form-control-user" [placeholder]="g.get('tel')['placeholder']">
                       </div>
+                      <div class="form-group">
+                        <input type="text" formControlName="twid" class="form-control form-control-user" [placeholder]="g.get('twid')['placeholder']"
+                        [class.is-invalid]="g.get('twid').touched && g.get('twid').invalid">
+                        <pre>{{ g.get('twid').errors | json }}</pre>
+                      </div>
                     </section>
 
                     <div class="form-group">
