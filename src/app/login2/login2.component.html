@@ -60,11 +60,11 @@ errors = {{ form.get('email').errors | json }}
                       <div class="form-group">
                         <input type="text" formControlName="tel" class="form-control form-control-user" placeholder="輸入您的電話(09xx000000)">
                       </div>
-                      <div class="form-group">
-                        <button type="button">＋</button>
-                      </div>
                     </section>
 
+                    <div class="form-group">
+                      <button type="button" (click)="addExtra()">＋</button>
+                    </div>
                   </section>
 
                   <button type="submit" class="btn btn-primary btn-user btn-block">

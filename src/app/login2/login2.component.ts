@@ -41,16 +41,17 @@ export class Login2Component implements OnInit {
       }),
       isRememberMe: true,
       extra: this.fb.array([
-        this.fb.group({
-          name: this.fb.control(''),
-          tel: this.fb.control('')
-        }),
-        this.fb.group({
-          name: this.fb.control(''),
-          tel: this.fb.control('')
-        })
+        this.makeExtra(),
+        this.makeExtra()
       ])
 
+    });
+  }
+
+  makeExtra() {
+    return this.fb.group({
+      name: this.fb.control(''),
+      tel: this.fb.control('')
     });
   }
 
@@ -62,6 +63,11 @@ export class Login2Component implements OnInit {
 
   getFormArray(name: string) {
     return this.form.get(name) as FormArray;
+  }
+
+  addExtra() {
+    let extra = this.getFormArray('extra');
+    extra.push(this.makeExtra());
   }
 
   onSubmit(form: FormGroup) {
